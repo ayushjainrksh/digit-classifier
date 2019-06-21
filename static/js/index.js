@@ -48,10 +48,13 @@ function clearArea() {
 // Function to send image to python
 function convert(event) {
     var myCanvas = document.getElementById("myCanvas");
-    var d = myCanvas.toDataURL("image/png");
+    var d = myCanvas.toDataURL()
     console.log(d);
-    // $.get( "/get_image/"+d );
-    $.post("/",d , function(){
-        event.preventDefault();
-    });
+    $.ajax({
+        type: "POST",
+        url: "http://localhost:5000/",
+        data: { 'data' : d},
+      }).done(function() {
+        console.log("Sent");
+      });
 }
