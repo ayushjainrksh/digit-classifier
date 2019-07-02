@@ -28,7 +28,7 @@ function Init()
 function Draw(x, y, isDown) {
     if (isDown) {
         ctx.beginPath();
-        ctx.strokeStyle = "black";
+        ctx.strokeStyle = "white";
         ctx.lineWidth = "9";
         ctx.lineJoin = "round";
         ctx.moveTo(lastX, lastY);
@@ -46,7 +46,7 @@ function clearArea() {
 
 
 // Function to send image to python
-function convert(event) {
+function convert() {
     var myCanvas = document.getElementById("myCanvas");
     var d = myCanvas.toDataURL()
     console.log(d);
@@ -55,6 +55,8 @@ function convert(event) {
         url: "http://localhost:5000/",
         data: { 'data' : d},
       }).done(function() {
+        // document.getElementById('output').innerHTML = value;
+        // document.write(3);
         console.log("Sent");
       });
 }
