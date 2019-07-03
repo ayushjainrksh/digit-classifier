@@ -1,0 +1,71 @@
+body {
+    background: whitesmoke;
+}
+
+#heading {
+    text-align: center;
+}
+
+.outer {
+    text-align: center;
+}
+
+#canv {
+    margin-bottom: 20px;
+}
+
+.buttons { 
+    /* margin-bottom: 20px; */
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#clear {
+    margin-right: 5px;
+    display: inline-block;
+}
+
+#conv {
+    display: inline-block;
+}
+
+#clear button {
+    width:100px;
+    padding: 5px 5px;
+    font-size: 100%;
+    color: rgb(235, 62, 62);
+    background: white;
+    border: 2px solid rgb(235, 62, 62);
+    border-radius: 5%;
+
+}
+
+#conv button {
+    width:100px;    
+    padding: 5px 5px;    
+    font-size: 100%;
+    color: green;
+    background: white;
+    border: 2px solid green;
+    border-radius: 5%;
+}
+
+#clear button:hover {
+    color: white;
+    background-color: rgb(235, 62, 62);
+}
+
+#conv button:hover {
+    color: white;
+    background-color: green;
+}
+
+#output {
+    display: inline-block;
+    padding: 5px 75px;
+    background: black;
+    color: whitesmoke;
+    border: 2px solid blue;
+}

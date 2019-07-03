@@ -27,24 +27,16 @@ def index():
                                        ])
 
         newimg = transform(newimg).unsqueeze(0)
-        # print(newimg)
-        # print(newimg.dim())
-        # newimg = torch.utils.data.DataLoader(newimg)
-        # print(iter(newimg).next().shape)
-
-        # pred = "3"
         model = get_model()
         model.eval()
-        output = model(newimg)
+        with torch.no_grad():
+            output = model(newimg)
         print(output)
-
-        # print(output.argmax(dim=1))
 
         pred = output.argmax(dim=1).item()
         print("Predicted value : ", pred)
 
         return str(pred)
-        # return render_template("index.html", value = pred)
 
 if __name__ == "__main__":
     app.run(debug = True)

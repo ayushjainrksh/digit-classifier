@@ -1,48 +1,3 @@
-# import torch
-# from torch import nn
-# import torch.nn.functional as F
-# from torchvision import datasets, transforms
-# from torch import optim
-# import numpy as np
-
-# #Import the dataset 
-# transform = transforms.Compose([transforms.ToTensor(),transforms.Normalize((0.5,),(0.5,))])
-
-# trainset = datasets.MNIST("~/.pytorch/MNIST_data", download=True, train=True, transform=transform)
-# trainloader = torch.utils.data.DataLoader(trainset, batch_size=64, shuffle = True)
-
-# #Building the model
-# model = nn.Sequential(nn.Linear(784, 128),
-#                     nn.ReLU(),
-#                     nn.Linear(128, 64),
-#                     nn.ReLU(),
-#                     nn.Linear(64, 10),
-#                     nn.LogSoftmax(dim=1))
-
-# #Creating an optimizer
-# optimizer = optim.SGD(model.parameters(), lr=0.003)
-
-# criterion = nn.NLLLoss()
-
-# #Training the model 
-# epochs = 5
-# for i in range(epochs):
-#     running_loss = 0
-#     print("Epoch : ", i, "...")
-#     for images, labels in trainloader:
-#         images = images.view(images.shape[0], -1)
-#         optimizer.zero_grad()
-
-#         logits = model(images)
-#         loss = criterion(logits, labels)
-#         loss.backward()
-#         optimizer.step()
-
-#         running_loss += loss.item()
-#     else:
-#         print(running_loss/len(trainloader))
-
-
 # -*- coding: utf-8 -*-
 """
 Spyder Editor
@@ -294,7 +249,7 @@ class Resnet(nn.Module):
 
 def get_model():
   resnet = Resnet((64, 1, 32, 32),5)
-  checkpoint = torch.load('resnet_50_mnist_10_epochs.pth')
+  checkpoint = torch.load('check.pth')
   resnet.load_state_dict(checkpoint)
   resnet.eval()
   

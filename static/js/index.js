@@ -49,20 +49,15 @@ function clearArea() {
 function convert() {
     var myCanvas = document.getElementById("myCanvas");
     var d = myCanvas.toDataURL()
-    console.log(d);
+    // console.log(d);
     $.ajax({
         type: "POST",
         url: "http://localhost:5000/",
         data: { 'data' : d},
         success: function(response) {
-            console.log(response);
-            // $("html").html(response);
             $("#output").html(response)
         }
       }).done(function() {
-        // document.getElementById('output').innerHTML = value;
-        // document.write(3);
-
         console.log("Sent");
       });
 }
