@@ -11,7 +11,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'GET':
-        return render_template("index.html", value = "Output")
+        return render_template("index.html")
     if request.method == 'POST':
         print("Image recieved")
         data_url = request.values
@@ -43,8 +43,7 @@ def index():
         pred = output.argmax(dim=1)
         print("Predicted value : ", pred.item())
 
-        return render_template("index.html", value = pred)
-
+        return render_template("result.html", value = pred)
 
 if __name__ == "__main__":
     app.run(debug = True)
