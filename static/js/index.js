@@ -52,7 +52,7 @@ function convert() {
     // console.log(d);
     $.ajax({
         type: "POST",
-        url: "http://localhost:5000/",
+        url: "/",
         data: { 'data' : d},
         success: function(response) {
             $("#output").html(response)
