@@ -249,7 +249,7 @@ class Resnet(nn.Module):
 
 def get_model():
   resnet = Resnet((64, 1, 32, 32),5)
-  checkpoint = torch.load('check.pth')
+  checkpoint = torch.load('check.pth', map_location=lambda storage, loc: storage)
   resnet.load_state_dict(checkpoint)
   resnet.eval()
   
