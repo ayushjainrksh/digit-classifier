@@ -63,12 +63,12 @@ body {
 }
 
 #output {
-    /* display: inline-block; */
-    /* padding: 5px 75px; */
+    padding: 10px 0;
     width: 200px;
     margin: 0 auto;
-    height: 20px;
+    height: 30px;
     background: black;
     color: whitesmoke;
     border: 2px solid blue;
+    font-size: 25px;
 }
